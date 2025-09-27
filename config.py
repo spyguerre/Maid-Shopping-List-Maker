@@ -25,6 +25,7 @@ PRICE_DATA = {
     "beurre salé": {"price": 2.7, "unit_qty": 250, "store": "Gde Srf"},
     "cannelle": {"price": 3., "unit_qty": 15, "store": "Gde Srf"},
     "cassonade": {"price": 2.5, "unit_qty": 500, "store": "Gde Srf"},
+    "caissettes": {"price": 3, "unit_qty": 30, "store": "Stockomani"},
     "chocolat": {"price": 6., "unit_qty": 500, "store": "Super U"},
     "chocolat vegan": {"price": 2.5, "unit_qty": 100, "store": "Site Vegan"},
     "citron": {"price": 2., "unit_qty": 4, "store": "Gde Srf"},
@@ -88,4 +89,3 @@ UNITS_MAP = {
 # The width and height of the ingredients tab
 HEIGHT = 22 * len(RECIPES) + 1
 WIDTH = 15
-

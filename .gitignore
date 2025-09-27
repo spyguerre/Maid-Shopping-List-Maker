@@ -1,5 +1,8 @@
 .idea
 __pycache__
+.venv
 *.xlsx
 *.csv
 test.py
+
+!ExampleRecipe.xlsx
