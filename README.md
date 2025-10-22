@@ -58,8 +58,7 @@ in Google Sheets.
 - After uploading the file to Google Drive and allowing access
 to recipe sheets, set your desired amount of pieces for each recipe
 next to `target pieces:`, and download this tab as CSV file.
-Rename it to `shopping_list.xlsx - Ingredients.csv` if necessary,
-and move it to the project folder.
+Change the `INGREDIENTS_CSV_PATH` inside `config.py` if necessary.
 
 - Finally, run the script to generate the shopping list tab:
 
