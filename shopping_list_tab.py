@@ -23,6 +23,19 @@ class Ingredient:
         self.qty += qty
 
 
+def add_ingredient(current_ingredient, ingredient_list):
+    found = False
+    for ing in ingredient_list:
+        if ing.is_similar(current_ingredient):
+            ing.add_qty(current_ingredient.qty)
+            found = True
+            break
+
+    # Add the ingredient anyway, even if no price was found in the dictionary from config.py
+    if not found:
+        ingredient_list.append(current_ingredient)
+
+
 def generate_shopping_list(ingredients_csv_path_override=None, tab_name=None):
     df = pd.read_csv(INGREDIENTS_CSV_PATH if not ingredients_csv_path_override else ingredients_csv_path_override)
     df = df[['Mult. Qty', 'Unit', 'Ingredient']]
@@ -39,7 +52,7 @@ def generate_shopping_list(ingredients_csv_path_override=None, tab_name=None):
     for name, count in df2.itertuples(index=False, name=None):
         if i % 2 == 0:
             current_pastry_name = name
-            pieces_per_batch = float(count.replace(",", "."))
+            pieces_per_batch = float(count.replace(",", ".")) if count != "/" else 1
         else:
             target_pieces = float(count.replace(",", "."))
             total_pieces = int(pieces_per_batch * math.ceil(target_pieces / pieces_per_batch))
@@ -49,21 +62,19 @@ def generate_shopping_list(ingredients_csv_path_override=None, tab_name=None):
 
     ingredient_list = []
     for qty, unit, ingredient in df.itertuples(index=False, name=None):
+        qty = float(qty.replace(",", "."))
+        if ingredient.lower() in INGREDIENTS_MAP.keys() and type(INGREDIENTS_MAP[ingredient.lower()]) is list:  # Handle lists of ing mapping
+            for ing_mapped in INGREDIENTS_MAP[ingredient.lower()]:
+                cur_ing_mapped = Ingredient(ing_mapped["coef"]*qty, ing_mapped["unit"], ing_mapped["name"])
+                add_ingredient(cur_ing_mapped, ingredient_list)
+            continue
+
         current_ingredient = Ingredient(qty, unit, ingredient)
-
-        found = False
-        for ing in ingredient_list:
-            if ing.is_similar(current_ingredient):
-                ing.add_qty(current_ingredient.qty)
-                found = True
-                break
-
-        # Add the ingredient anyway, even if no price was found in the dictionary from config.py
-        if not found:
-            ingredient_list.append(current_ingredient)
+        add_ingredient(current_ingredient, ingredient_list)
 
     ingredient_list.sort(key=lambda ing: ing.name)
 
+    # Write computed data to a new tab in the workbook
     wb = openpyxl.load_workbook(SHOPPING_LIST_PATH)
     ws2 = wb.create_sheet(title=f"List at {datetime.datetime.now().strftime('%Y-%m-%d %Hh%M.%S')}" if not tab_name else tab_name)
 

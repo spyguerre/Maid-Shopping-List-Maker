@@ -1,7 +1,7 @@
 # Path to save the generated shopping list Excel file
 SHOPPING_LIST_PATH = 'shopping_list.xlsx'
 # Path to the CSV file containing the ingredients (downloaded back from google sheets)
-INGREDIENTS_CSV_PATH = 'unitrecipes/MushipanYuzu.csv'
+INGREDIENTS_CSV_PATH = '1erJetPatisseries.csv'
 
 # List of recipes with their corresponding Google Sheets URLs, starting ingredient row number, and a boolean indicating whether or not to dismiss the pieces per batch information.
 RECIPES = {
@@ -29,17 +29,17 @@ RECIPES = {
     "Thé matcha": {"url": "https://docs.google.com/spreadsheets/d/1AR6PUlUwFrhRaURi0kh2B-NOz-Gvxmr4hrftl18vB0U/edit?gid=0#gid=0", "ing_cell": 9, "is_single-piece_recipe": True},
     "Lassi litchi rose gingembre": {"url": "https://docs.google.com/spreadsheets/d/1IdMB6C6Zz2gmWme-ly5w5egdBjWhDuF_YlxCOMAAH8Y/edit?gid=0#gid=0", "ing_cell": 9, "is_single-piece_recipe": True},
     "Diabolo": {"url": "https://docs.google.com/spreadsheets/d/1UAtNaav3rMF-B3GfbxRO2D4CzqiKjHKxcLbFVb4Idqs/edit?gid=0#gid=0", "ing_cell": 9, "is_single-piece_recipe": True},
-    "Tanu tanu au raisin": {"url": "https://docs.google.com/spreadsheets/d/1u7goZqapTH1FBMcSjdhjPsieSUvc2rW_8sh3CXJERHs/edit?gid=0#gid=0", "ing_cell": 9, "is_single-piece_recipe": True},
+    "Tanu tanu à la myrtille": {"url": "https://docs.google.com/spreadsheets/d/1u7goZqapTH1FBMcSjdhjPsieSUvc2rW_8sh3CXJERHs/edit?gid=0#gid=0", "ing_cell": 9, "is_single-piece_recipe": True},
     "Thé chaud des Vahinés": {"url": "https://docs.google.com/spreadsheets/d/1OSFZpVU5C2rCkflA-sEWyXukjEANdO7zkXnBd-HrZnk/edit?gid=0#gid=0", "ing_cell": 9, "is_single-piece_recipe": True},
     "The froid Guimet": {"url": "https://docs.google.com/spreadsheets/d/1bNsPWO60L1uOoM3AtmbvPEizRqZ5AAVOCxG_F63Pw2s/edit?gid=0#gid=0", "ing_cell": 9, "is_single-piece_recipe": True},
     # Misc
-    "Miscelaneous": {"products": [
-        "Krema",
-        "Carambars",
-        "Sucre",
-        "Charlottes",
-        "Gants",
-    ]}
+    # "Miscelaneous": {"products": [
+    #     "Krema",
+    #     "Carambars",
+    #     "Sucre",
+    #     "Charlottes",
+    #     "Gants",
+    # ]}
 }
 
 
@@ -81,7 +81,7 @@ PRICE_DATA = {
     "litchi": {"price": 2.58, "unit_qty": 230, "store": "Exo Est"},
     "marshmallow": {"price": 21.7, "unit_qty": 1000, "store": "https://www.delidrinks.com/topping-et-decorations/15511v5091-tooping-mini-marshmallow-blanc-sachet-1kg.html#/3-conditionnement-a_la_piece"},
     "miel": {"price": 6.59, "unit_qty": 1000, "store": "https://www.promocash.com/ecommerce/product/1kg-miel-liquide-pp/01t7R000008LGaNQAW"},
-    "nate de coco": {"price": 5., "unit_qty": 1000, "store": "Exo Est"},  # Full pif ici
+    "nate de coco": {"price": 5., "unit_qty": 600, "store": "Exo Est"},  # Full pif ici
     "oeuf": {"price": 25.62, "unit_qty": 90, "store": "https://www.promocash.com/ecommerce/product/90-oeufs-sol-moyen-vrac/01t7R000008LGffQAG"},
     "orange": {"price": 3., "unit_qty": 6, "store": "Gde Srf"},
     "pâte de haricots azuki": {"price": 2.99, "unit_qty": 500, "store": "Exo Est"},
@@ -93,9 +93,11 @@ PRICE_DATA = {
     "sel": {"price": 0., "unit_qty": 1., "store": "Maison"},
     "sirop chocolat blanc": {"price": 8.55, "unit_qty": 1000, "store": "https://www.delidrinks.com/sirops-boissons-chaudes/13993v1529-sirop-chocolat-blanc-bouteille-verre-1l.html#/3-conditionnement-a_la_piece"},
     "sirop cookie": {"price": 7.9, "unit_qty": 1000, "store": "https://www.promocash.com/ecommerce/product/70cl-sirop-choco-cookies-monin/01t7R000008L6KjQAK"},
+    "sirop diabolo average": {"price": 3., "unit_qty": 1000, "store": "Placeholder"},
     "sirop de rose": {"price": 6.39, "unit_qty": 1000, "store": "https://www.promocash.com/ecommerce/product/70cl-sir-rose-monin/01t7R000008L3BwQAK"},
     "sirop grenadine": {"price": 2.51, "unit_qty": 1000, "store": "https://www.promocash.com/ecommerce/product/pet-1l-sirop-grenadine-saxo/01t7R000008L5OPQA0"},
     "sirop menthe": {"price": 2.38, "unit_qty": 1000, "store": "https://www.promocash.com/ecommerce/product/pet-1l-sirop-menthe-saxo/01t7R000008L5e3QAC"},
+    "sirop myrtille": {"price": 18.53, "unit_qty": 2500, "store": "https://www.delidrinks.com/aromatisation/15078v4421-bubble-tea-sirop-myrtille-bidon-25kg.html#/3-conditionnement-a_la_piece"},
     "sirop pain d'épices": {"price": 8.1, "unit_qty": 1000, "store": "https://www.promocash.com/ecommerce/product/70cl-sirop-pain-epice-monin/01t7R000008LG9eQAG"},
     "sirop pêche": {"price": 3.56, "unit_qty": 1000, "store": "https://www.promocash.com/ecommerce/product/pet-1l-sirop-peche-saxo/01t7R000008L44IQAS"},
     "sirop pumpkin spice": {"price": 10., "unit_qty": 1000, "store": "https://www.delidrinks.com/sirops-boissons-chaudes/14430v1571-sirop-pumpkin-spice-bouteille-verre-1l.html#/3-conditionnement-a_la_piece"},
@@ -138,6 +140,23 @@ INGREDIENTS_MAP = {
     "lait végétal": "lait d'avoine",
     "caissettes/papier muffin": "caissettes",
     "sorbet": "sorbet average",
+    "café": [{"name": "café moulu", "unit": "g", "coef": 0.05}],  # cL de café chaud -> g de café moulu acheté
+    "(chantilly)": [{"name": "chantilly", "unit": "g", "coef": 0.5}],  # Option -> prise une fois sur deux
+    "(sirop pumpkin spice)": [{"name": "sirop pumpkin spice", "unit": "g", "coef": 0.5}],  # Option -> prise une fois sur deux
+    "thé chai infusé": [{"name": "thé chai impérial", "unit": "g", "coef": 0.01}],  # cL de thé infusé -> g de thé acheté
+    "thé des vahinés infusé": [{"name": "thé des vahinés", "unit": "g", "coef": 0.01}],  # cL de thé infusé -> g de thé acheté
+    "thé guimet infusé": [{"name": "thé guimet", "unit": "g", "coef": 0.01}],  # cL de thé infusé -> g de thé acheté
+    "lait chaud": "lait",
+    "lait moussé chaud": "lait",
+    "pépites chocolat blanc": "pépites chocolat au lait",
+    "eau bouillante": "eau",
+    "eau froide": "eau",
+    "mélange lait froid + litchi": [
+        {"name": "lait", "unit": "g", "coef": 0.813},  # cL de mélange -> g de lait acheté
+        {"name": "litchi", "unit": "g", "coef": 0.187}  # cL de mélange -> g de litchi acheté
+    ],
+    "sirop de menthe/grenadine/pêche": "sirop diabolo average",
+    "mélange eau de coco + nata": "nate de coco"
 }
 
 # Mappings to standardize unit names
