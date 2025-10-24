@@ -1,7 +1,7 @@
 # Path to save the generated shopping list Excel file
 SHOPPING_LIST_PATH = 'shopping_list.xlsx'
 # Path to the CSV file containing the ingredients (downloaded back from google sheets)
-INGREDIENTS_CSV_PATH = '1erJetPatisseries.csv'
+INGREDIENTS_CSV_PATH = 'boissonsv2.csv'
 
 # List of recipes with their corresponding Google Sheets URLs, starting ingredient row number, and a boolean indicating whether or not to dismiss the pieces per batch information.
 RECIPES = {
@@ -140,14 +140,14 @@ INGREDIENTS_MAP = {
     "lait végétal": "lait d'avoine",
     "caissettes/papier muffin": "caissettes",
     "sorbet": "sorbet average",
-    "café": [{"name": "café moulu", "unit": "g", "coef": 0.05}],  # cL de café chaud -> g de café moulu acheté
+    "café": [{"name": "café moulu", "unit": "g", "coef": 0.05 * 10}],  # cL de café chaud -> g de café moulu acheté
     "(chantilly)": [{"name": "chantilly", "unit": "g", "coef": 0.5}],  # Option -> prise une fois sur deux
     "(sirop pumpkin spice)": [{"name": "sirop pumpkin spice", "unit": "g", "coef": 0.5}],  # Option -> prise une fois sur deux
     "thé chai infusé": [{"name": "thé chai impérial", "unit": "g", "coef": 0.01}],  # cL de thé infusé -> g de thé acheté
-    "thé des vahinés infusé": [{"name": "thé des vahinés", "unit": "g", "coef": 0.01}],  # cL de thé infusé -> g de thé acheté
-    "thé guimet infusé": [{"name": "thé guimet", "unit": "g", "coef": 0.01}],  # cL de thé infusé -> g de thé acheté
-    "lait chaud": "lait",
-    "lait moussé chaud": "lait",
+    "thé des vahinés infusé": [{"name": "thé des vahinés", "unit": "g", "coef": 0.01 * 10}],  # cL de thé infusé -> g de thé acheté
+    "thé guimet infusé": [{"name": "thé guimet", "unit": "g", "coef": 0.01 * 10}],  # cL de thé infusé -> g de thé acheté
+    "lait chaud": [{"name": "lait", "unit": "g", "coef": 10}],  # cL -> g
+    "lait moussé chaud": [{"name": "lait", "unit": "g", "coef": 10}],  # cL -> g
     "pépites chocolat blanc": "pépites chocolat au lait",
     "eau bouillante": "eau",
     "eau froide": "eau",

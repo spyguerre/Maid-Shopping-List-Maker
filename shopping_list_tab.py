@@ -62,7 +62,8 @@ def generate_shopping_list(ingredients_csv_path_override=None, tab_name=None):
 
     ingredient_list = []
     for qty, unit, ingredient in df.itertuples(index=False, name=None):
-        qty = float(qty.replace(",", "."))
+        if type(qty) is str:
+            qty = float(qty.replace(",", "."))
         if ingredient.lower() in INGREDIENTS_MAP.keys() and type(INGREDIENTS_MAP[ingredient.lower()]) is list:  # Handle lists of ing mapping
             for ing_mapped in INGREDIENTS_MAP[ingredient.lower()]:
                 cur_ing_mapped = Ingredient(ing_mapped["coef"]*qty, ing_mapped["unit"], ing_mapped["name"])
